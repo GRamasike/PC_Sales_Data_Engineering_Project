@@ -91,12 +91,12 @@ GO
 
 | File or Folder | Description |
 |---|---|
-| `star_schema_drawio.pdf` | The Draw.io data model showing the full star schema design |
+| `pc_sales_star_schema.pdf` | The Draw.io data model showing the full star schema design |
 | `dim_tables/` | SQL scripts used to create all 10 dimension tables |
 | `stored_procedures/` | Stored procedures written to load data into each dimension table |
-| `exec_procedures.sql` | A single script that executes all stored procedures in the correct order |
+| `12.execute_stored_procedure.sql` | A single script that executes all stored procedures in the correct order |
 | `drop_procedures.sql` | A cleanup script to drop all stored procedures when needed |
-| `fact_table/` | SQL script to create the fact table *(coming soon)* |
+| `fact_table/` | SQL script to create the fact table 
 
 ---
 
