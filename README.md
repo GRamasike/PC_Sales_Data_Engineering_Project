@@ -96,8 +96,7 @@ GO
 | `stored_procedures/` | Stored procedures written to load data into each dimension table |
 | `exec_procedures.sql` | A single script that executes all stored procedures in the correct order |
 | `drop_procedures.sql` | A cleanup script to drop all stored procedures when needed |
-| `fact_table/` | SQL script to create the fact table *(coming soon)* |
-| `queries/` | Analytical SQL queries written against the star schema *(coming soon)* |
+| `fact_table/` | SQL script to create the fact table |
 
 ---
 
