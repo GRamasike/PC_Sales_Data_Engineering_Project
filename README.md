@@ -93,7 +93,7 @@ GO
 💻 PC-Sales-Data-Engineering
 │
 ├── 📄 README.md
-├── 📊 star_schema_drawio.pdf
+├── 📊 pc_sales_star_schema_drawio.pdf
 │
 ├── 📁 dim_tables/
 │   ├── dim_location.sql
