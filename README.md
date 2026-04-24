@@ -146,7 +146,6 @@ GO
 ## 🔮 Future Enhancements
 
 - [ ] Complete data cleaning and transformation in the staging layer
-- [x] Build and populate the `fact_pcsales` table
 - [ ] Build and deploy the ETL pipeline from `computerstg` to `computerdwh`
 - [ ] Automate the CSV ingestion pipeline
 - [ ] Set up a scheduled data refresh
