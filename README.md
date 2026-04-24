@@ -71,7 +71,7 @@ GO
 USE computerstg;
 GO
 
--- Data Warehouse Database (coming soon)
+-- Data Warehouse Database (active)
 IF DB_ID('computerdwh') IS NULL
 BEGIN
     CREATE DATABASE computerdwh;
