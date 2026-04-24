@@ -1,0 +1,11 @@
+DROP PROCEDURE [computerstg].[dbo].[sp_create_dim_location];
+DROP PROCEDURE [computerstg].[dbo].[sp_create_dim_pc];
+DROP PROCEDURE [computerstg].[dbo].[sp_create_dim_shop];
+DROP PROCEDURE [computerstg].[dbo].[sp_create_dim_specification];
+DROP PROCEDURE [computerstg].[dbo].[sp_create_dim_customer];
+DROP PROCEDURE [computerstg].[dbo].[sp_create_dim_salesperson];
+DROP PROCEDURE [computerstg].[dbo].[sp_create_dim_payment_method];
+DROP PROCEDURE [computerstg].[dbo].[sp_create_dim_date];
+DROP PROCEDURE [computerstg].[dbo].[sp_create_dim_channel];
+DROP PROCEDURE [computerstg].[dbo].[sp_create_dim_priority];
+DROP PROCEDURE [computerstg].[dbo].[sp_create_fact_table];
