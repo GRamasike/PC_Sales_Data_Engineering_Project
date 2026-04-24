@@ -89,14 +89,43 @@ GO
 
 ## 📂 Repository Structure
 
-| File or Folder | Description |
-|---|---|
-| `pc_sales_star_schema.pdf` | The Draw.io data model showing the full star schema design |
-| `dim_tables/` | SQL scripts used to create all 10 dimension tables |
-| `stored_procedures/` | Stored procedures written to load data into each dimension table |
-| `12.execute_stored_procedure.sql` | A single script that executes all stored procedures in the correct order |
-| `drop_procedures.sql` | A cleanup script to drop all stored procedures when needed |
-| `fact_table/` | SQL script to create the fact table 
+```
+💻 PC-Sales-Data-Engineering
+│
+├── 📄 README.md
+├── 📊 star_schema_drawio.pdf
+│
+├── 📁 dim_tables/
+│   ├── dim_location.sql
+│   ├── dim_shop.sql
+│   ├── dim_pc.sql
+│   ├── dim_specifications.sql
+│   ├── dim_customer.sql
+│   ├── dim_salesperson.sql
+│   ├── dim_payment_method.sql
+│   ├── dim_date.sql
+│   ├── dim_channel.sql
+│   └── dim_priority.sql
+│
+├── 📁 stored_procedures/
+│   ├── sp_load_dim_location.sql
+│   ├── sp_load_dim_shop.sql
+│   ├── sp_load_dim_pc.sql
+│   ├── sp_load_dim_specifications.sql
+│   ├── sp_load_dim_customer.sql
+│   ├── sp_load_dim_salesperson.sql
+│   ├── sp_load_dim_payment_method.sql
+│   ├── sp_load_dim_date.sql
+│   ├── sp_load_dim_channel.sql
+│   └── sp_load_dim_priority.sql
+│
+├── 📄 exec_procedures.sql
+├── 📄 drop_procedures.sql
+│
+├── 📁 fact_table/
+│   └── fact_pcsales.sql
+│
+```
 
 ---
 
@@ -117,7 +146,7 @@ GO
 ## 🔮 Future Enhancements
 
 - [ ] Complete data cleaning and transformation in the staging layer
-- [ ] Build and populate the `fact_pcsales` table
+- [x] Build and populate the `fact_pcsales` table
 - [ ] Build and deploy the ETL pipeline from `computerstg` to `computerdwh`
 - [ ] Automate the CSV ingestion pipeline
 - [ ] Set up a scheduled data refresh
@@ -183,7 +212,13 @@ Every dimension table includes a `LoadDate` column that automatically records th
 
 ---
 
+### Avoiding Data Explosion When Building the Fact Table
 
+One of the most important lessons from building the `fact_pcsales` table was understanding how joins can cause data to multiply unexpectedly. When joining multiple dimension tables back to the raw data, an incorrectly written join can match one row in the raw data to many rows in a dimension table, causing the same record to appear multiple times in the fact table. This is known as a data explosion.
+
+The solution was to carefully structure each join to ensure that every dimension key matched back to exactly one row, keeping the grain of the fact table consistent and the record count accurate. This is a fundamental concept in dimensional modelling and one that every data engineer encounters when building their first fact table.
+
+---
 
 ## 🛠️ Tools Used
 
@@ -194,9 +229,7 @@ Every dimension table includes a `LoadDate` column that automatically records th
 **SQL Server** was used to build the database, create the dimension tables, and write the stored procedures.
 
 **SSMS (SQL Server Management Studio)** was used throughout for script development and testing.
-
 ---
-
 ## 👤 About Me
 
 I am a **BSc IT Graduate** with 6 years of professional experience as a **Batch Processing Administrator** at a credit bureau, where I worked extensively with large volumes of sensitive financial data in a production environment.
@@ -205,4 +238,5 @@ With a solid academic foundation in **Database Management, Mathematics for Compu
 
 This project is part of a growing portfolio designed to demonstrate my technical capabilities in database design, querying, and data analysis.
 
-📫 Feel free to connect with me on (https://www.linkedin.com/in/gomolemo-ramasike/) or explore my other projects here on GitHub!
+📫 Feel free to connect with me on [(https://www.linkedin.com/in/gomolemo-ramasike/)](#) or explore my other projects here on GitHub!
+
